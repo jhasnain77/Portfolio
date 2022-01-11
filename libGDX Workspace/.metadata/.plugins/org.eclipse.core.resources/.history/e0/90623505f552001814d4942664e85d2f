@@ -1,0 +1,54 @@
+package com.hasnain;
+
+import java.util.ArrayList;
+
+import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Intersector;
+
+public class Flappy extends ApplicationAdapter {
+	SpriteBatch batch;
+	Sprite bg;
+	Sprite flappy;
+	int initial;
+	float gravity = (float) -0.5;
+	float time;
+	float flap;
+	
+	@Override
+	public void create() {
+		batch = new SpriteBatch();
+		bg = new Sprite(new Texture("battlebgCrystalCavern.png"));
+		flappy = new Sprite(new Texture("132.png"));
+		bg.setSize(bg.getWidth() * 2, bg.getHeight() * 3);
+		flappy.setPosition(0, Gdx.graphics.getHeight() / 2 + flappy.getHeight() / 2);
+		
+	}
+
+	@Override
+	public void render() {
+		Gdx.gl.glClearColor(0, 0, 0, 1);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		initial = 0;
+		if (Gdx.input.isKeyJustPressed(Keys.SPACE)) {
+			initial = 60;
+		}
+		time = Gdx.graphics.getDeltaTime() * 150;
+		flap = initial*time + gravity * time * time;
+		flappy.translateY(flap);
+		batch.begin();
+		bg.draw(batch);
+		flappy.draw(batch);
+		batch.end();
+	}
+
+	@Override
+	public void dispose() {
+		batch.dispose();
+	}
+}
