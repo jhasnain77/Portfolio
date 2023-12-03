@@ -1,0 +1,35 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-glimpse2-dev-172417-authRole",
+      "UnauthRoleArn": "arn:aws:iam::959421929045:role/amplify-glimpse2-dev-172417-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::959421929045:role/amplify-glimpse2-dev-172417-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-glimpse2-dev-172417-deployment",
+      "UnauthRoleName": "amplify-glimpse2-dev-172417-unauthRole",
+      "StackName": "amplify-glimpse2-dev-172417",
+      "StackId": "arn:aws:cloudformation:us-east-2:959421929045:stack/amplify-glimpse2-dev-172417/11839400-6dd9-11ed-b621-06ba11b4e8d8",
+      "AmplifyAppId": "d2nlqb2az7jfny"
+    },
+    "categories": {
+      "api": {
+        "glimpse2": {}
+      },
+      "auth": {
+        "Glimpse2": {}
+      },
+      "storage": {
+        "s3glimpse2storage1aacef11": {}
+      },
+      "function": {
+        "lambdafunctiontest": {
+          "deploymentBucketName": "amplify-glimpse2-dev-172417-deployment",
+          "s3Key": "amplify-builds/lambdafunctiontest-4e4e70514c565a484b65-build.zip"
+        }
+      },
+      "api": {
+        "glimpse2": {}
+      }
+    }
+  }
+}
